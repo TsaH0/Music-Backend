@@ -33,11 +33,7 @@ async def download(q:Query):
         ydl_opts= {
             'format': 'bestaudio/best',
             'outtmpl': '%(title)s.%(ext)s',
-            'postprocessors': [{
-                'key': 'FFmpegExtractAudio',
-                'preferredcodec': 'mp3',
-                'preferredquality': '192',
-            }],
+            'postprocessors': [],
             'quiet': True,
         }
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
